@@ -93,6 +93,7 @@
                     <connections>
                         <outlet property="PasswordField" destination="gFr-Tk-a9V" id="vEs-Ui-HmP"/>
                         <outlet property="UsernameField" destination="kmu-0B-qdJ" id="rJx-Je-tJc"/>
+                        <segue destination="758-bV-jLv" kind="presentation" identifier="loginSegue" id="NdZ-zF-et5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
