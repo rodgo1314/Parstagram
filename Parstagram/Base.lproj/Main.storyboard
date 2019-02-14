@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4KZ-kh-nTh">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyph-logo_May2016" translatesAutoresizingMaskIntoConstraints="NO" id="4KZ-kh-nTh">
                                 <rect key="frame" x="16" y="52" width="343" height="219"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -174,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="commentField" destination="oTj-eq-U6c" id="er1-8R-kxw"/>
+                        <outlet property="imageView" destination="4KZ-kh-nTh" id="tit-K2-bon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fiT-QQ-BqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,6 +207,7 @@
     </scenes>
     <resources>
         <image name="IG_Glyph_Fill" width="120" height="120"/>
+        <image name="glyph-logo_May2016" width="504" height="504"/>
         <image name="logo-instagram" width="1014" height="292"/>
     </resources>
 </document>
