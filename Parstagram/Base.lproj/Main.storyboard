@@ -110,11 +110,80 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hf0-hS-5e1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Z2V-gF-1sQ"/>
+                    <navigationItem key="navigationItem" id="Z2V-gF-1sQ">
+                        <barButtonItem key="rightBarButtonItem" title="Post" image="IG_Glyph_Fill" id="UXA-Gg-tNR">
+                            <connections>
+                                <segue destination="W5Q-4h-0e5" kind="presentation" id="gIK-LP-mLK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrR-4k-YmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Posting View Controller-->
+        <scene sceneID="u6f-AD-IUr">
+            <objects>
+                <viewController id="W5Q-4h-0e5" customClass="PostingViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CVc-b9-y5n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4KZ-kh-nTh">
+                                <rect key="frame" x="16" y="52" width="343" height="219"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="EV8-3t-eHF"/>
+                                    <constraint firstAttribute="width" constant="343" id="lu8-mj-m39"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JB9-CP-ImH" appends="YES" id="pzj-Bv-Y60"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivo-cn-6dl" userLabel="SubmitButton">
+                                <rect key="frame" x="147" y="370" width="80" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSubmit:" destination="W5Q-4h-0e5" eventType="touchUpInside" id="2vU-c4-S52"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="oTj-eq-U6c" userLabel="Comment field">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oTj-eq-U6c" firstAttribute="leading" secondItem="VEL-sd-gvL" secondAttribute="leading" constant="16" id="9kz-pw-uEF"/>
+                            <constraint firstItem="Ivo-cn-6dl" firstAttribute="top" secondItem="oTj-eq-U6c" secondAttribute="bottom" constant="22" id="NL7-LF-Rrf"/>
+                            <constraint firstItem="Ivo-cn-6dl" firstAttribute="leading" secondItem="VEL-sd-gvL" secondAttribute="leading" constant="147" id="TId-jT-ZQv"/>
+                            <constraint firstItem="VEL-sd-gvL" firstAttribute="trailing" secondItem="Ivo-cn-6dl" secondAttribute="trailing" constant="148" id="Vix-m7-dUz"/>
+                            <constraint firstItem="VEL-sd-gvL" firstAttribute="trailing" secondItem="4KZ-kh-nTh" secondAttribute="trailing" constant="16" id="hCc-So-Y15"/>
+                            <constraint firstItem="VEL-sd-gvL" firstAttribute="trailing" secondItem="oTj-eq-U6c" secondAttribute="trailing" constant="16" id="kmm-Pj-FeL"/>
+                            <constraint firstItem="oTj-eq-U6c" firstAttribute="top" secondItem="4KZ-kh-nTh" secondAttribute="bottom" constant="47" id="qLD-Np-x2f"/>
+                            <constraint firstItem="4KZ-kh-nTh" firstAttribute="top" secondItem="VEL-sd-gvL" secondAttribute="top" constant="32" id="yB3-iB-tBe"/>
+                            <constraint firstItem="4KZ-kh-nTh" firstAttribute="leading" secondItem="VEL-sd-gvL" secondAttribute="leading" constant="16" id="zLQ-9X-GeD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VEL-sd-gvL"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentField" destination="oTj-eq-U6c" id="er1-8R-kxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiT-QQ-BqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JB9-CP-ImH">
+                    <connections>
+                        <action selector="onCameraButton:" destination="W5Q-4h-0e5" id="sUz-IX-rse"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2824.8000000000002" y="130.88455772113943"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FV0-dO-dYV">
@@ -136,6 +205,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IG_Glyph_Fill" width="120" height="120"/>
         <image name="logo-instagram" width="1014" height="292"/>
     </resources>
 </document>
