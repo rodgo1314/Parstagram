@@ -16,6 +16,26 @@ class FeedViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
+    @IBAction func onLogOut(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginViewController = main.instantiateViewController(withIdentifier: "LogInViewController")
+        
+        let delagate = UIApplication.shared.delegate as! AppDelegate
+        
+        delagate.window?.rootViewController = loginViewController
+        
+        
+        
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
