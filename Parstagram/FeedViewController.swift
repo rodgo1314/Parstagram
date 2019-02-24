@@ -28,10 +28,7 @@ class FeedViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let delagate = UIApplication.shared.delegate as! AppDelegate
         
         delagate.window?.rootViewController = loginViewController
-        
-        
-        
-        
+
     }
     
     
@@ -91,6 +88,27 @@ class FeedViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         return cell
         
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        
+        let comment = PFObject(className: "Comments")
+        
+        comment["text"] = "Random comment for now"
+        comment["post"] = post
+        comment["author"] = PFUser.current()!
+        
+        post.add(comment, forKey: "comments")
+        
+        post.saveInBackground { (success, error) in
+            if success{
+                print("saved comment")
+            }else{
+                print("error in saving comment")
+            }
+        }
         
     }
 
